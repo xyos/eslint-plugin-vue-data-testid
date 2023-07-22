@@ -2,9 +2,9 @@
 
 module.exports = {
   plugins: [
-    'data-tids',
+    'vue-data-tids',
   ],
   rules: {
-    'data-tids/missing-data-tid': 'error',
+    'vue-data-tids/missing-data-tid': 'error',
   },
 }
