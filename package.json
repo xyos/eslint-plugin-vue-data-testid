@@ -4,6 +4,7 @@
   "description": "An eslint plugin for vue tids",
   "main": "lib/index.js",
   "scripts": {
+    "build": "rimraf lib && babel src --out-dir lib",
     "test": "mocha tests --recursive --reporter dot"
   },
   "repository": {
@@ -20,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/xyos/eslint-plugin-vue-data-tids/issues"
   },
-  "homepage": "https://github.com/xyos/eslint-plugin-vue-data-tids#readme"
+  "homepage": "https://github.com/xyos/eslint-plugin-vue-data-tids#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "eslint": "^8.45.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "requireindex": "^1.2.0"
+  }
 }

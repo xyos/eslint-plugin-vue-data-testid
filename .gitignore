@@ -1,0 +1,18 @@
+.DS_Store
+node_modules/
+.env
+.nyc_output/
+coverage/
+
+# IDE user config
+.vscode/
+.idea/
+.neovim/
+.vs/
+
+# Logs
+yarn-error.log
+npm-debug.log
+
+# Build output
+lib/
