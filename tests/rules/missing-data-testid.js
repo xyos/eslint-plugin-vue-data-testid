@@ -1,27 +1,27 @@
-const RuleTester = require("eslint").RuleTester;
+const RuleTester = require('eslint').RuleTester
 
-const rule = require("../../src/rules/missing-data-testid");
+const rule = require('../../src/rules/missing-data-testid')
 
 const ruleTester = new RuleTester({
-  parser: require.resolve("vue-eslint-parser"),
+  parser: require.resolve('vue-eslint-parser'),
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
-});
+})
 
-ruleTester.run("missing-data-testid", rule, {
+ruleTester.run('missing-data-testid', rule, {
   valid: ['<template><input data-testid="foo" /></template>'],
   invalid: [
     {
-      code: "<template><input /></template>",
+      code: '<template><input /></template>',
       errors: [
         {
-          message: "Missing data-testid attribute",
-          type: "VElement",
+          message: 'Missing data-testid attribute',
+          type: 'VElement',
         },
       ],
       output: '<template><input data-testid="" /></template>',
     },
   ],
-});
+})
