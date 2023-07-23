@@ -2,9 +2,9 @@
 
 module.exports = {
   plugins: [
-    'vue-data-test-id',
+    'vue-data-testid',
   ],
   rules: {
-    'vue-data-test-id/missing-data-test-id': 'error',
+    'vue-data-testid/missing-data-testid': 'error',
   },
 }

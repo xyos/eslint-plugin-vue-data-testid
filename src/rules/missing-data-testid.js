@@ -19,7 +19,7 @@ const defaultTestableTagNames = [
 module.exports = {
   meta: {
     docs: {
-      description: "Enforce a custom data-test-id attribute on testable Vue.js components",
+      description: "Enforce a custom data-testid attribute on testable Vue.js components",
       category: "recommended",
     },
     fixable: "code",
@@ -45,7 +45,7 @@ module.exports = {
   create(context) {
     const options = context.options[0] || {};
     const testableTagNames = options.testableTagNames || defaultTestableTagNames;
-    const dataTestIdAttribute = options.dataTestIdAttribute || "data-test-id";
+    const dataTestIdAttribute = options.dataTestIdAttribute || "data-testid";
     return context.parserServices.defineTemplateBodyVisitor({
       VElement(node) {
         const tag = kebabToPascalCase(node.rawName);

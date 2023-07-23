@@ -1,6 +1,6 @@
 const RuleTester = require("eslint").RuleTester;
 
-const rule = require("../../src/rules/missing-data-test-id");
+const rule = require("../../src/rules/missing-data-testid");
 
 const ruleTester = new RuleTester({
   parser: require.resolve("vue-eslint-parser"),
@@ -10,18 +10,18 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run("missing-data-test-id", rule, {
-  valid: ['<template><input data-test-id="foo" /></template>'],
+ruleTester.run("missing-data-testid", rule, {
+  valid: ['<template><input data-testid="foo" /></template>'],
   invalid: [
     {
       code: "<template><input /></template>",
       errors: [
         {
-          message: "Missing data-test-id attribute",
+          message: "Missing data-testid attribute",
           type: "VElement",
         },
       ],
-      output: '<template><input data-test-id="" /></template>',
+      output: '<template><input data-testid="" /></template>',
     },
   ],
 });
