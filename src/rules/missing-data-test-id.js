@@ -6,7 +6,7 @@ function kebabToPascalCase(str) {
     .replace(/[-_]/g, "");
 }
 
-const testableTagNames = [
+const defaultTestableTagNames = [
   "Input",
   "Button",
   "Checkbox",
@@ -19,33 +19,50 @@ const testableTagNames = [
 module.exports = {
   meta: {
     docs: {
-      description: "Enforce data-test-id attribute on all elements",
+      description: "Enforce a custom data-test-id attribute on testable Vue.js components",
       category: "recommended",
     },
     fixable: "code",
-    schema: [],
+    schema: [
+      {
+        type: "object",
+        properties: {
+          testableTagNames: {
+            type: "array",
+            items: { type: "string" },
+          },
+          dataTestIdAttribute: {
+            type: "string",
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
     messages: {
-      missingDataTestId: "Missing data-test-id attribute",
+      missingDataTestId: "Missing {{dataTestIdAttribute}} attribute",
     },
   },
   create(context) {
+    const options = context.options[0] || {};
+    const testableTagNames = options.testableTagNames || defaultTestableTagNames;
+    const dataTestIdAttribute = options.dataTestIdAttribute || "data-test-id";
     return context.parserServices.defineTemplateBodyVisitor({
       VElement(node) {
         const tag = kebabToPascalCase(node.rawName);
         const tokens = context.parserServices.getTemplateBodyTokenStore();
         if (testableTagNames.includes(tag)) {
           const dataTestId = node.startTag.attributes.find(
-            (attr) => attr.key.name === "data-test-id"
+            (attr) => attr.key.name === dataTestIdAttribute
           );
           if (!dataTestId) {
             context.report({
               node,
-              loc: tokens.getFirstToken(node).loc,
               messageId: "missingDataTestId",
+              data: { dataTestIdAttribute },
               fix: (fixer) =>
                 fixer.insertTextAfter(
                   tokens.getFirstToken(node),
-                  ' data-test-id=""'
+                  ` ${dataTestIdAttribute}=""`
                 ),
             });
           }
