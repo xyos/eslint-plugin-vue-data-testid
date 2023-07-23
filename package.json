@@ -1,12 +1,14 @@
 {
   "name": "eslint-plugin-vue-data-testid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ESLint plugin to enforce consistent usage of 'data-testid' attributes in Vue.js components for better testability",
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
     "test": "mocha tests --recursive --reporter dot",
-    "prepublishOnly": "npm run build",
+    "test:ci": "nyc --reporter=lcov mocha tests --recursive --reporter dot",
+    "test:coverage": "nyc mocha tests --recursive --reporter dot",
+    "prepublishOnly": "pnpm run build",
     "prepare": "husky install"
   },
   "repository": {
