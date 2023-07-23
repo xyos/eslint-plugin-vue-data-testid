@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-vue-data-tids",
-  "version": "1.0.0-beta.8",
-  "description": "An eslint plugin for vue tids",
+  "name": "eslint-plugin-vue-data-test-id",
+  "version": "1.0.0",
+  "description": "An ESLint plugin to enforce consistent usage of 'data-test-id' attributes in Vue.js components for better testability",
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github:xyos/eslint-plugin-vue-data-tids"
+    "url": "https://github.com/xyos/eslint-plugin-vue-data-test-id.git"
   },
   "keywords": [
     "eslint",
@@ -20,9 +20,9 @@
   "author": "Jairo Suarez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xyos/eslint-plugin-vue-data-tids/issues"
+    "url": "https://github.com/xyos/eslint-plugin-vue-data-test-id/issues"
   },
-  "homepage": "https://github.com/xyos/eslint-plugin-vue-data-tids#readme",
+  "homepage": "https://github.com/xyos/eslint-plugin-vue-data-test-id",
   "files": [
     "lib"
   ],

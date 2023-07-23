@@ -4,7 +4,7 @@ const requireindex = require("requireindex");
 
 module.exports = {
   meta: {
-    name: "eslint-plugin-vue-data-tids",
+    name: "eslint-plugin-vue-data-test-id",
     version: require("../package.json").version,
   },
   configs: requireindex(path.join(__dirname, "./configs")),

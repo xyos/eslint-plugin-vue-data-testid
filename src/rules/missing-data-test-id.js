@@ -19,13 +19,13 @@ const testableTagNames = [
 module.exports = {
   meta: {
     docs: {
-      description: "Enforce data-tid attribute on all elements",
+      description: "Enforce data-test-id attribute on all elements",
       category: "recommended",
     },
     fixable: "code",
     schema: [],
     messages: {
-      missingDataTid: "Missing data-tid attribute",
+      missingDataTestId: "Missing data-test-id attribute",
     },
   },
   create(context) {
@@ -34,18 +34,18 @@ module.exports = {
         const tag = kebabToPascalCase(node.rawName);
         const tokens = context.parserServices.getTemplateBodyTokenStore();
         if (testableTagNames.includes(tag)) {
-          const dataTid = node.startTag.attributes.find(
-            (attr) => attr.key.name === "data-tid"
+          const dataTestId = node.startTag.attributes.find(
+            (attr) => attr.key.name === "data-test-id"
           );
-          if (!dataTid) {
+          if (!dataTestId) {
             context.report({
               node,
               loc: tokens.getFirstToken(node).loc,
-              messageId: "missingDataTid",
+              messageId: "missingDataTestId",
               fix: (fixer) =>
                 fixer.insertTextAfter(
                   tokens.getFirstToken(node),
-                  ' data-tid=""'
+                  ' data-test-id=""'
                 ),
             });
           }
