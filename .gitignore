@@ -16,3 +16,6 @@ npm-debug.log
 
 # Build output
 lib/
+
+# yarn v3
+.yarn/*

@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
     "test": "mocha tests --recursive --reporter dot",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,10 @@
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "rimraf": "^5.0.1"
@@ -41,5 +44,9 @@
     "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.15.1",
     "requireindex": "^1.2.0"
+  },
+  "volta": {
+    "node": "18.17.0",
+    "yarn": "3.6.1"
   }
 }
