@@ -29,6 +29,7 @@ Here is an example configuration:
     ]
   }
 }
+```
 
 ## Examples:
 
