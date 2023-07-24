@@ -32,9 +32,13 @@ module.exports = {
 
 ## Rules
 
-### `missing-data-testid`:
+### [tag-element](./docs/rules/tag-element.md)
 
 Enforces the inclusion of a custom 'data-testid' attribute in specified Vue.js components.
+
+### [event-attribute](./docs/rules/event-attribute.md):
+
+Enforces the inclusion of a custom 'data-testid' attribute in specified Vue.js components with testable events.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
