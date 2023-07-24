@@ -39,7 +39,13 @@ module.exports = {
         const tokens = context.parserServices.getTemplateBodyTokenStore()
         if (testableTagNames.includes(tag)) {
           const dataTestId = node.startTag.attributes.find(
-            (attr) => attr.key.name === dataTestIdAttribute
+            (attr) => {
+              if (attr.directive) {
+                return attr.key.argument.name === dataTestIdAttribute
+              } else {
+                return attr.key.name === dataTestIdAttribute
+              }
+            }
           )
           if (!dataTestId) {
             context.report({

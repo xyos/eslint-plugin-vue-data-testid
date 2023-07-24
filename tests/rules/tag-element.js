@@ -11,7 +11,10 @@ const ruleTester = new RuleTester({
 })
 
 ruleTester.run('missing-data-testid', rule, {
-  valid: ['<template><input data-testid="foo" /></template>'],
+  valid: [
+    '<template><input data-testid="foo" /></template>',
+    '<template><input :data-testid="bar" /></template>',
+  ],
   invalid: [
     {
       code: '<template><input /></template>',
