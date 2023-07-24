@@ -5,6 +5,7 @@ module.exports = {
     'vue-data-testid',
   ],
   rules: {
-    'vue-data-testid/missing-data-testid': 'error',
+    'vue-data-testid/tag-element': 'error',
+    'vue-data-testid/event-attribute': 'error',
   },
 }

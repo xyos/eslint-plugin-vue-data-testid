@@ -1,6 +1,6 @@
 const RuleTester = require('eslint').RuleTester
 
-const rule = require('../../src/rules/missing-data-testid')
+const rule = require('../../src/rules/tag-element')
 
 const ruleTester = new RuleTester({
   parser: require.resolve('vue-eslint-parser'),

@@ -1,4 +1,4 @@
-# Rule: Missing Data Test Id
+# Rule: Tag Element
 
 ## Description
 
@@ -20,7 +20,7 @@ Here is an example configuration:
 ```json
 {
   "rules": {
-    "vue-data-testid/missing-data-testid": [
+    "vue-data-testid/tag-element": [
       "error",
       {
         "testableTagNames": ["Input", "Button", "Select"],

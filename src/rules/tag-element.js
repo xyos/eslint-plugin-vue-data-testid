@@ -1,20 +1,7 @@
 'use strict'
 
-function kebabToPascalCase (str) {
-  return str
-    .replace(/(?:^|[-_])(\w)/g, (c) => c.toUpperCase())
-    .replace(/[-_]/g, '')
-}
-
-const defaultTestableTagNames = [
-  'Input',
-  'Button',
-  'Checkbox',
-  'Radio',
-  'Select',
-  'Textarea',
-  'Link',
-]
+const { kebabToPascalCase } = require('../utils/helpers')
+const { defaultTestableTagNames, defaultDataTestIdAttribute } = require('../utils/constants')
 
 module.exports = {
   meta: {
@@ -45,7 +32,7 @@ module.exports = {
   create (context) {
     const options = context.options[0] || {}
     const testableTagNames = options.testableTagNames || defaultTestableTagNames
-    const dataTestIdAttribute = options.dataTestIdAttribute || 'data-testid'
+    const dataTestIdAttribute = options.dataTestIdAttribute || defaultDataTestIdAttribute
     return context.parserServices.defineTemplateBodyVisitor({
       VElement (node) {
         const tag = kebabToPascalCase(node.rawName)
