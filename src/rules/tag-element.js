@@ -40,7 +40,7 @@ module.exports = {
         if (testableTagNames.includes(tag)) {
           const dataTestId = node.startTag.attributes.find(
             (attr) => {
-              if (attr.directive) {
+              if (attr.directive && attr.key.argument && attr.key.argument.name) {
                 return attr.key.argument.name === dataTestIdAttribute
               } else {
                 return attr.key.name === dataTestIdAttribute
