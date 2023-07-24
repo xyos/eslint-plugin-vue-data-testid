@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue-data-testid",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An ESLint plugin to enforce consistent usage of 'data-testid' attributes in Vue.js components for better testability",
   "main": "lib/index.js",
   "scripts": {
